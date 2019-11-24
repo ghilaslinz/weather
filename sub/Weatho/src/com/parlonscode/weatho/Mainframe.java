@@ -59,26 +59,7 @@ public class Mainframe extends JFrame {
 						currentWeather.setSummary((String) currently.get("summary"));
 
 						System.out.println(currentWeather.getFormattedTime());
-					/*	
-					 * String timezone = (String) forecast.get("timezone");
-						double temperature = Double.parseDouble(currently.get("temperature")+ "");
-						long time = (long) currently.get("time");
-						double humidity = Double.parseDouble(currently.get("humidity")+ "");
-						double precipProbability = Double.parseDouble(currently.get("precipProbability") +"");
-						String summary = (String) currently.get("summary");
-						System.out.println(timezone);
-						System.out.println(temperature);
-						System.out.println(time);
-						System.out.println(humidity);
-						System.out.println(precipProbability);
-						System.out.println(summary);
-						Date date = new Date(time*1000L); 
-						SimpleDateFormat formatter = new SimpleDateFormat("HH:mm"); 
-						formatter.setTimeZone(TimeZone.getTimeZone(timezone)); 
-						String timeString = formatter.format(date);
-					    System.out.println(timeString);
-					    
-					    */
+					
 						
 				}else {
 					Alert.error(Mainframe.this, GENERIC_EROR_MESSAGE);
@@ -129,38 +110,5 @@ public class Mainframe extends JFrame {
 		// TODO Auto-generated method stub
 		return getPreferredSize();
 	}
-/*class ForecastWorker extends SwingWorker<String, Void> {
-   private String forecastUrl;
-   
-	public ForecastWorker(String forecastUrl) {
-		this.forecastUrl = forecastUrl;
-	}
-	@Override
-	protected String doInBackground() throws Exception {
-		OkHttpClient client = new OkHttpClient();
-		Request request = new Request.Builder().url(forecasturl).build();
-		Call call = client.newCall(request);
-		try {
-			Response reponse = call.execute();
-			if (reponse.isSuccessful()) {
-				return reponse.body().string();	
-			}
-			
-			
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			System.err.println("Error : " +e);
-		}
-		return null;
-	
-	}
-	@Override
-	protected void done() {
-		try {
-			System.out.println(get());
-		} catch (Exception e) {
-			System.err.println("Error :" +e);
-		}
-	}
-}*/
+
 }
